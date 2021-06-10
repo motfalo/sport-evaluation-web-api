@@ -19,7 +19,7 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Average EMG value</th>
                     <th scope="col">View</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ product.name }}</td>
                     <td>{{ product.description }}</td>
-                    <td>{{ product.price }}</td>
+                    <td>{{ product.average_emg }}</td>
                     <td><a href="{% url 'product_view' product.id %}"><button type="button" class="btn btn-outline-primary btn-sm">View</button></a></td>
                     <td><a href="{% url 'product_delete' product.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
                 </tr>

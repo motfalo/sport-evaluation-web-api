@@ -12,7 +12,7 @@ class ProductForm(forms.ModelForm):
         self.fields['description'].widget.attrs = {
             'class': 'form-control col-md-6'
         }
-        self.fields['price'].widget.attrs = {
+        self.fields['average_emg'].widget.attrs = {
             'class': 'form-control col-md-6',
             'step': 'any',
             'min': '1',
@@ -20,4 +20,4 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        fields = ('name', 'description', 'price')
+        fields = ('name', 'description', 'average_emg')
