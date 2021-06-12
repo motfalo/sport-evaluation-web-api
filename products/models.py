@@ -6,6 +6,8 @@ class Product(models.Model):
     name = models.CharField('Name', max_length=100)
     description = models.TextField('Description', blank=True)
     average_emg = models.DecimalField('Average EMG value', decimal_places=2, max_digits=8)
+    max_emg = models.DecimalField('Maximal EMG value', decimal_places=2, max_digits=8)
+    min_emg = models.DecimalField('Minimal EMG value', decimal_places=2, max_digits=8)
     # price = models.DecimalField('Price', decimal_places=2, max_digits=8)
 
     created = models.DateTimeField('Created', auto_now_add=True)

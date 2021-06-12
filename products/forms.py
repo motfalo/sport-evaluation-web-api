@@ -17,7 +17,17 @@ class ProductForm(forms.ModelForm):
             'step': 'any',
             'min': '1',
         }
+        self.fields['max_emg'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
+        self.fields['min_emg'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
 
     class Meta:
         model = Product
-        fields = ('name', 'description', 'average_emg')
+        fields = ('name', 'description', 'average_emg', 'max_emg', 'min_emg')

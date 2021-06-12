@@ -18,6 +18,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100, verbose_name='Name')),
                 ('description', models.TextField(blank=True, verbose_name='Description')),
                 ('average_emg', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Average EMG value')),
+                ('max_emg', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Average EMG value')),
+                ('min_emg', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Average EMG value')),
                 ('created', models.DateTimeField(auto_now_add=True, verbose_name='Created')),
                 ('changed', models.DateTimeField(auto_now=True, verbose_name='Changed')),
             ],
