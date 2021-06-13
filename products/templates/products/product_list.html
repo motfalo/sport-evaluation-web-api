@@ -19,9 +19,15 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Average EMG value</th>
-                    <th scope="col">Maximal EMG value</th>
-                    <th scope="col">Minimal EMG value</th>
+                    <th scope="col">Average proper muscle EMG</th>
+                    <th scope="col">Average antagonist muscle EMG</th>
+                    <th scope="col">Average wrong muscle EMG</th>
+                    <th scope="col">Maximal proper muscle EMG</th>
+                    <th scope="col">Maximal antagonist muscle EMG</th>
+                    <th scope="col">Maximal wrong muscle EMG</th>
+                    <th scope="col">Minimal proper muscle EMG</th>
+                    <th scope="col">Minimal antagonist muscle EMG</th>
+                    <th scope="col">Minimal wrong muscle EMG</th>
                     <th scope="col">View</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -31,9 +37,15 @@
                 <tr>
                     <td>{{ product.name }}</td>
                     <td>{{ product.description }}</td>
-                    <td>{{ product.average_emg }}</td>
-                    <td>{{ product.max_emg }}</td>
-                    <td>{{ product.min_emg }}</td>
+                    <td>{{ product.average_emg_proper_muscle }}</td>
+                    <td>{{ product.average_emg_antagonist_muscle }}</td>
+                    <td>{{ product.average_emg_wrong_muscle }}</td>
+                    <td>{{ product.max_emg_proper_muscle }}</td>
+                    <td>{{ product.max_emg_antagonist_muscle }}</td>
+                    <td>{{ product.max_emg_wrong_muscle }}</td>
+                    <td>{{ product.min_emg_proper_muscle }}</td>
+                    <td>{{ product.min_emg_antagonist_muscle }}</td>
+                    <td>{{ product.min_emg_wrong_muscle }}</td>
                     <td><a href="{% url 'product_view' product.id %}"><button type="button" class="btn btn-outline-primary btn-sm">View</button></a></td>
                     <td><a href="{% url 'product_delete' product.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
                 </tr>

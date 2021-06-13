@@ -9,9 +9,15 @@
             <ul class="list-group">
               <li class="list-group-item"><strong>Name:</strong> {{ object.name }}</li>
               <li class="list-group-item"><strong>Description:</strong> {{ object.description }}</li>
-              <li class="list-group-item"><strong>Average EMG value:</strong> {{ object.average_emg }}</li>
-              <li class="list-group-item"><strong>Maximal EMG value:</strong> {{ object.max_emg }}</li>
-              <li class="list-group-item"><strong>Minimal EMG value:</strong> {{ object.min_emg }}</li>
+              <li class="list-group-item"><strong>Average proper muscle EMG:</strong> {{ object.average_emg_proper_muscle }}</li>
+              <li class="list-group-item"><strong>Average antagonist muscle EMG:</strong> {{ object.average_emg_antagonist_muscle }}</li>
+              <li class="list-group-item"><strong>Average wrong muscle EMG:</strong> {{ object.average_emg_wrong_muscle }}</li>
+              <li class="list-group-item"><strong>Maximal proper muscle EMG:</strong> {{ object.max_emg_proper_muscle }}</li>
+              <li class="list-group-item"><strong>Maximal antagonist muscle EMG:</strong> {{ object.max_emg_antagonist_muscle }}</li>
+              <li class="list-group-item"><strong>Maximal wrong muscle EMG:</strong> {{ object.min_emg_wrong_muscle }}</li>
+              <li class="list-group-item"><strong>Minimal proper muscle EMG:</strong> {{ object.min_emg_proper_muscle }}</li>
+              <li class="list-group-item"><strong>Minimal antagonist muscle EMG:</strong> {{ object.min_emg_antagonist_muscle }}</li>
+              <li class="list-group-item"><strong>Minimal wrong muscle EMG:</strong> {{ object.min_emg_wrong_muscle }}</li>
             </ul>
         </div>
     </div>
