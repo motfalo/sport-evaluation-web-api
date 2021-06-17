@@ -1,4 +1,4 @@
-{% extends 'products/base.html' %}
+{% extends 'patients/base.html' %}
 
 {% block content %}
     <h1 class="my-4">Delete -
@@ -12,7 +12,7 @@
                   Are you sure to delete {{ object }} ?
                 </div>
                 <input type="submit" class="btn btn-info" value="Yes, delete it" />
-                <a class="btn btn-success" href="{% url 'product_list' %}">No, just I've tried the delete button</a>
+                <a class="btn btn-success" href="{% url 'patient_list' %}">No, just I've tried the delete button</a>
             </form>
         </div>
     </div>

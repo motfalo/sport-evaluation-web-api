@@ -1,0 +1,64 @@
+{% extends 'patients/base.html' %}
+
+{% block content %}
+    <h1 class="my-4">
+        <small>Patients</small>
+    </h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="row">
+    {% if object_list %}
+        <div class="col-12" style="overflow-x: scroll">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Average proper muscle EMG</th>
+                    <th scope="col">Average antagonist muscle EMG</th>
+                    <th scope="col">Average hold muscle EMG</th>
+{#                    <th scope="col">Maximal proper muscle EMG</th>#}
+{#                    <th scope="col">Maximal antagonist muscle EMG</th>#}
+{#                    <th scope="col">Maximal hold muscle EMG</th>#}
+{#                    <th scope="col">Minimal proper muscle EMG</th>#}
+{#                    <th scope="col">Minimal antagonist muscle EMG</th>#}
+{#                    <th scope="col">Minimal hold muscle EMG</th>#}
+                    <th scope="col">View</th>
+                    <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for patient in object_list %}
+                <tr>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.description }}</td>
+                    <td>{{ patient.average_emg_proper_muscle }}</td>
+                    <td>{{ patient.average_emg_antagonist_muscle }}</td>
+                    <td>{{ patient.average_emg_hold_muscle }}</td>
+{#                    <td>{{ patient.max_emg_proper_muscle }}</td>#}
+{#                    <td>{{ patient.max_emg_antagonist_muscle }}</td>#}
+{#                    <td>{{ patient.max_emg_hold_muscle }}</td>#}
+{#                    <td>{{ patient.min_emg_proper_muscle }}</td>#}
+{#                    <td>{{ patient.min_emg_antagonist_muscle }}</td>#}
+{#                    <td>{{ patient.min_emg_hold_muscle }}</td>#}
+                    <td><a href="{% url 'patient_view' patient.id %}"><button type="button" class="btn btn-outline-primary btn-sm">View</button></a></td>
+                    <td><a href="{% url 'patient_delete' patient.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-warning" role="alert">
+            There is no patient, yet. But if you want, you can add from <a class="badge badge-info" href="{% url 'patient_new' %}"><strong>here.</strong></a>
+        </div>
+    </div>
+    {% endif %}
+    </div>
+{% endblock %}

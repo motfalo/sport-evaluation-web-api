@@ -12,20 +12,20 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name='Patient',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100, verbose_name='Name')),
                 ('description', models.TextField(blank=True, verbose_name='Description')),
                 ('average_emg_proper_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Average proper muscle EMG')),
                 ('average_emg_antagonist_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Average antagonist muscle EMG')),
-                ('average_emg_wrong_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Average wrong muscle EMG')),
+                ('average_emg_hold_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Average hold muscle EMG')),
                 ('max_emg_proper_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Maximal proper muscle EMG')),
                 ('max_emg_antagonist_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Maximal antagonist muscle EMG')),
-                ('max_emg_wrong_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Maximal wrong muscle EMG')),
+                ('max_emg_hold_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Maximal hold muscle EMG')),
                 ('min_emg_proper_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Minimal proper muscle EMG')),
                 ('min_emg_antagonist_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Minimal antagonist muscle EMG')),
-                ('min_emg_wrong_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Minimal wrong muscle EMG')),
+                ('min_emg_hold_muscle', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Minimal hold muscle EMG')),
                 ('created', models.DateTimeField(auto_now_add=True, verbose_name='Created')),
                 ('changed', models.DateTimeField(auto_now=True, verbose_name='Changed')),
             ],
