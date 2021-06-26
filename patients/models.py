@@ -14,6 +14,9 @@ class Patient(models.Model):
     min_emg_proper_muscle = models.DecimalField('Minimal proper muscle EMG', decimal_places=2, max_digits=8)
     min_emg_antagonist_muscle = models.DecimalField('Minimal antagonist muscle EMG', decimal_places=2, max_digits=8)
     min_emg_hold_muscle = models.DecimalField('Minimal hold muscle EMG', decimal_places=2, max_digits=8)
+    proper_signal = models.FileField("Proper signal")
+    antagonist_signal = models.FileField("Antagonist signal")
+    hold_signal = models.FileField("Hold signal")
 
     created = models.DateTimeField('Created', auto_now_add=True)
     changed = models.DateTimeField('Changed', auto_now=True)

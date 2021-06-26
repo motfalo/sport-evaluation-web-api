@@ -32,3 +32,4 @@ class PatientDelete(SuccessMessageMixin, DeleteView):
     success_message = "Patient successfully deleted!"
 
 
+
