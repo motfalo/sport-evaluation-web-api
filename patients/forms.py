@@ -27,36 +27,36 @@ class PatientForm(forms.ModelForm):
             'step': 'any',
             'min': '1',
         }
-        # self.fields['max_emg_proper_muscle'].widget.attrs = {
-        #     'class': 'form-control col-md-6',
-        #     'step': 'any',
-        #     'min': '1',
-        # }
-        # self.fields['max_emg_antagonist_muscle'].widget.attrs = {
-        #     'class': 'form-control col-md-6',
-        #     'step': 'any',
-        #     'min': '1',
-        # }
-        # self.fields['max_emg_hold_muscle'].widget.attrs = {
-        #     'class': 'form-control col-md-6',
-        #     'step': 'any',
-        #     'min': '1',
-        # }
-        # self.fields['min_emg_proper_muscle'].widget.attrs = {
-        #     'class': 'form-control col-md-6',
-        #     'step': 'any',
-        #     'min': '1',
-        # }
-        # self.fields['min_emg_antagonist_muscle'].widget.attrs = {
-        #     'class': 'form-control col-md-6',
-        #     'step': 'any',
-        #     'min': '1',
-        # }
-        # self.fields['min_emg_hold_muscle'].widget.attrs = {
-        #     'class': 'form-control col-md-6',
-        #     'step': 'any',
-        #     'min': '1',
-        # }
+        self.fields['max_emg_proper_muscle'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
+        self.fields['max_emg_antagonist_muscle'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
+        self.fields['max_emg_hold_muscle'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
+        self.fields['min_emg_proper_muscle'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
+        self.fields['min_emg_antagonist_muscle'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
+        self.fields['min_emg_hold_muscle'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
 
     class Meta:
         model = Patient

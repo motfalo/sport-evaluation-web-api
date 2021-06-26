@@ -12,6 +12,9 @@
               <li class="list-group-item"><strong>Average proper muscle EMG:</strong> {{ object.average_emg_proper_muscle }}</li>
               <li class="list-group-item"><strong>Average antagonist muscle EMG:</strong> {{ object.average_emg_antagonist_muscle }}</li>
               <li class="list-group-item"><strong>Average hold muscle EMG:</strong> {{ object.average_emg_hold_muscle }}</li>
+              <a href="{% url 'patient_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
+              <a href="{% url 'patient_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
+              <a href="{% url 'patient_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
 {#              <li class="list-group-item"><strong>Maximal proper muscle EMG:</strong> {{ object.max_emg_proper_muscle }}</li>#}
 {#              <li class="list-group-item"><strong>Maximal antagonist muscle EMG:</strong> {{ object.max_emg_antagonist_muscle }}</li>#}
 {#              <li class="list-group-item"><strong>Maximal hold muscle EMG:</strong> {{ object.min_emg_hold_muscle }}</li>#}

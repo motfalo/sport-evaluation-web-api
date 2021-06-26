@@ -1,0 +1,19 @@
+{% extends 'patients/base.html' %}
+
+{% block content %}
+    <h1 class="my-4">Detail -
+        <small>{{ object.name }}</small>
+    </h1>
+    <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Name:</strong> {{ object.name }}</li>
+              <li class="list-group-item"><strong>Description:</strong> {{ object.description }}</li>
+              <li class="list-group-item"><strong>Average proper muscle EMG:</strong> {{ object.average_emg_proper_muscle }}</li>
+              <li class="list-group-item"><strong>Maximal proper muscle EMG:</strong> {{ object.max_emg_proper_muscle }}</li>
+              <li class="list-group-item"><strong>Minimal proper muscle EMG:</strong> {{ object.min_emg_proper_muscle }}</li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
