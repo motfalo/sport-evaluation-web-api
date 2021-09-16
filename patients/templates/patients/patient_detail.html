@@ -9,18 +9,14 @@
             <ul class="list-group">
               <li class="list-group-item"><strong>Name:</strong> {{ object.name }}</li>
               <li class="list-group-item"><strong>Description:</strong> {{ object.description }}</li>
-              <li class="list-group-item"><strong>Average proper muscle EMG:</strong> {{ object.average_emg_proper_muscle }}</li>
-              <li class="list-group-item"><strong>Average antagonist muscle EMG:</strong> {{ object.average_emg_antagonist_muscle }}</li>
-              <li class="list-group-item"><strong>Average hold muscle EMG:</strong> {{ object.average_emg_hold_muscle }}</li>
-              <a href="{% url 'patient_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
-              <a href="{% url 'patient_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
-              <a href="{% url 'patient_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
-{#              <li class="list-group-item"><strong>Maximal proper muscle EMG:</strong> {{ object.max_emg_proper_muscle }}</li>#}
-{#              <li class="list-group-item"><strong>Maximal antagonist muscle EMG:</strong> {{ object.max_emg_antagonist_muscle }}</li>#}
-{#              <li class="list-group-item"><strong>Maximal hold muscle EMG:</strong> {{ object.min_emg_hold_muscle }}</li>#}
-{#              <li class="list-group-item"><strong>Minimal proper muscle EMG:</strong> {{ object.min_emg_proper_muscle }}</li>#}
-{#              <li class="list-group-item"><strong>Minimal antagonist muscle EMG:</strong> {{ object.min_emg_antagonist_muscle }}</li>#}
-{#              <li class="list-group-item"><strong>Minimal hold muscle EMG:</strong> {{ object.min_emg_hold_muscle }}</li>#}
+              <li class="list-group-item"><strong>Sex:</strong> {{ object.sex }}</li>
+              <li class="list-group-item"><strong>Age:</strong> {{ object.age }}</li>
+              <li class="list-group-item"><strong>Height:</strong> {{ object.height }}</li>
+              <li class="list-group-item"><strong>Weight:</strong> {{ object.weight }}</li>
+
+              <a href="{% url 'patient_proper' object.id %}"><button type="button" class="btn btn-success">Proper</button></a>
+              <a href="{% url 'patient_antagonist' object.id %}"><button type="button" class="btn btn-success">Antagonist</button></a>
+              <a href="{% url 'patient_hold' object.id %}"><button type="button" class="btn btn-success">Hold</button></a>
             </ul>
         </div>
     </div>

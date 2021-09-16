@@ -12,51 +12,6 @@ class PatientForm(forms.ModelForm):
         self.fields['description'].widget.attrs = {
             'class': 'form-control col-md-6'
         }
-        self.fields['average_emg_proper_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['average_emg_antagonist_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['average_emg_hold_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['max_emg_proper_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['max_emg_antagonist_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['max_emg_hold_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['min_emg_proper_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['min_emg_antagonist_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
-        self.fields['min_emg_hold_muscle'].widget.attrs = {
-            'class': 'form-control col-md-6',
-            'step': 'any',
-            'min': '1',
-        }
         self.fields['proper_signal'].widget.attrs = {
             'class': 'form-control col-md-6'
         }
@@ -69,4 +24,5 @@ class PatientForm(forms.ModelForm):
 
     class Meta:
         model = Patient
-        fields = ('name', 'description', 'average_emg_proper_muscle', 'average_emg_antagonist_muscle', 'average_emg_hold_muscle', 'max_emg_proper_muscle', 'max_emg_antagonist_muscle', 'max_emg_hold_muscle', 'min_emg_proper_muscle', 'min_emg_antagonist_muscle', 'min_emg_hold_muscle', 'proper_signal', 'antagonist_signal', 'hold_signal')
+        fields = "__all__"
+        # fields = ('name', 'description', 'proper_signal', 'antagonist_signal', 'hold_signal')
