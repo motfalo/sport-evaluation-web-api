@@ -10,7 +10,6 @@ from django.core.files.storage import FileSystemStorage
 from .models import Patient
 from .forms import PatientForm
 
-
 class PatientList(ListView):
     model = Patient
     template_name = 'patients/patient_list.html'

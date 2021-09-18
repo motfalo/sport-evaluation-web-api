@@ -37,6 +37,14 @@
             <ul class="list-group">
               <li class="list-group-item"><strong>Name:</strong> {{ object.name }}</li>
               <li class="list-group-item"><strong>Description:</strong> {{ object.description }}</li>
+            {% load filter_tags %}
+            {% with signal_list=object.proper_signal.read|split_by_newline|convert_list_to_int %}
+
+                <li class="list-group-item"><strong>File:</strong> {{ signal_list }}</li>
+                <li class="list-group-item"><strong>Length:</strong> {{ signal_list|length }}</li>
+
+
+            {% endwith %}
             </ul>
         </div>
     <div id="curve_chart" style="width: 900px; height: 500px"></div>

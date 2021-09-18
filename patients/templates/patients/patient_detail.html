@@ -14,9 +14,16 @@
               <li class="list-group-item"><strong>Height:</strong> {{ object.height }}</li>
               <li class="list-group-item"><strong>Weight:</strong> {{ object.weight }}</li>
 
-              <a href="{% url 'patient_proper' object.id %}"><button type="button" class="btn btn-success">Proper</button></a>
-              <a href="{% url 'patient_antagonist' object.id %}"><button type="button" class="btn btn-success">Antagonist</button></a>
-              <a href="{% url 'patient_hold' object.id %}"><button type="button" class="btn btn-success">Hold</button></a>
+            <div class="second">
+                 <div class="col-md-12 text-center">
+                    <form>
+                        <a href="{% url 'patient_proper' object.id %}"><button type="button" class="btn btn-success float-left">Proper</button></a>
+                        <a href="{% url 'patient_antagonist' object.id %}"><button type="button" class="btn btn-success">Antagonist</button></a>
+                        <a href="{% url 'patient_hold' object.id %}"><button type="button" class="btn btn-success float-right">Hold</button></a>
+                    </form>
+                 </div>
+            </div>
+
             </ul>
         </div>
     </div>
