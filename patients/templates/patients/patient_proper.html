@@ -6,89 +6,36 @@
         google.charts.setOnLoadCallback(drawChart);
 
         {% load filter_tags %}
-        {% with signal_list=object.proper_signal.read|split_by_newline|convert_list_to_int|convert_to_charts:object.name %}
-        {#<li class="list-group-item"><strong>File:</strong> {{ signal_list }}</li>#}
-        {#  <li class="list-group-item"><strong>Length:</strong> {{ signal_list|length }}</li>#}
-
+        {% with signal_list=object.proper_signal.read|split_by_newline|convert_list_to_int|convert_to_charts %}
 
         function drawChart() {
-            {#var data = google.visualization.arrayToDataTable([[1, 1], [2,2],[3, 3]]);#}
-            {#var data = google.visualization.arrayToDataTable({{ signal_list|slice:"5:15" }});#}
-            {#var data = google.visualization.arrayToDataTable({{ signal_list|get_time_vector|slice:"5:15" }}, {{ signal_list|slice:"5:15" }});#}
-            {#var data = google.visualization.arrayToDataTable({{ signal_list|slice:"5:15" }});#}
-            {#var data = google.visualization.DataTable();#}
-            {##}
-            {#data.addColumn('number', 'X');#}
-            {#data.addColumn('number', 'Dogs');#}
-            {#var data = google.visualization.arrayToDataTable(['a', 'b'] + {{ signal_list|slice:"0:10" }});#}
-            {#var data = google.visualization.arrayToDataTable(['a', 'b'], {{ signal_list|slice:"0:10" }});#}
-            {#var data = google.visualization.arrayToDataTable([#}
-            {#    ['EMG', 'Patient ' + {{ object.name }}],#}
-            {#    [1,  1000],#}
-            {#    [2,  1170],#}
-            {#    [3,  660],#}
-            {#    [4,  1030]#}
-            {#]);#}
-            {#var data = google.visualization.arrayToDataTable([#}
-            {#    ['EMG', 'Patient ' + {{ object.name }}],#}
-            {#    [1,  1000],#}
-            {#    [2,  1170],#}
-            {#    [3,  660],#}
-            {#    [4,  1030]#}
-            {#]);#}
-        {#    var data = google.visualization.DataTable();#}
-        {##}
-        {#    data.addColumn('number', 'Time');#}
-        {#    data.addColumn('number', 'EMG');#}
-        {##}
-        {#    data.addRows([[1,1], [2,2]]);#}
-        {##}
-        {#    var options = {#}
-        {#        title: 'Proper muscle EMG signal',#}
-        {#        hAxis: {#}
-        {#            title: 'Time',#}
-        {#            logScale: false#}
-        {#        },#}
-        {#        vAxis: {#}
-        {#            title: 'EMG [A.U.]',#}
-        {#            logScale: false#}
-        {#        },#}
-        {#        curveType: 'function',#}
-        {#        legend: { position: 'bottom' }#}
-        {#    };#}
-        {##}
-        {#    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));#}
-        {##}
-        {#    chart.draw(data, options);#}
-        {# } #}
+            var data = new google.visualization.DataTable();
 
-      {#function drawChart() {#}
-      {##}
-      {#    var data = new google.visualization.DataTable();#}
-      {##}
-      {#    data.addColumn('string', 'Date');#}
-      {#    data.addColumn('number', 'Price');#}
-      {##}
-      {#    data.addRows([#}
-      {#        ['Mar 14', 43],#}
-      {#        ['Nov 14', 39],#}
-      {#        ['Jan 15', 42],#}
-      {#        ['Mar 15', 37],#}
-      {#        ['Dec 15', 34],#}
-      {#        ['Feb 16', 40]#}
-      {#    ]);#}
-      {##}
-      {#   var options = {#}
-      {#      title: "Gold Prices",#}
-      {#      width: 600,#}
-      {#      height: 400,#}
-      {#      vAxis: {title: 'USD/kg'},#}
-      {#      legend: { position: "none" }#}
-      {#   };#}
-      {##}
-      {#   var chart = new google.visualization.ScatterChart(document.getElementById('curve_chart'));#}
-      {#   chart.draw(data, options);#}
-      {# }#}
+            data.addColumn('number', 'Time');
+            data.addColumn('number', 'Patient');
+
+            data.addRows(
+                {{ signal_list }}
+            );
+
+            var options = {
+                title: 'Proper muscle EMG signal',
+                hAxis: {
+                    title: 'Time',
+                    logScale: false
+                },
+                vAxis: {
+                    title: 'EMG [A.U.]',
+                    logScale: false
+                },
+                curveType: 'function',
+                legend: { position: 'bottom' }
+             };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+         }
             {% endwith %}
     </script>
 {% endblock %}

@@ -25,11 +25,6 @@ def get_time_vector(list_of_values):
 
 
 @register.filter(name='convert_to_charts')
-def convert_to_charts(list_of_values, patient_name):
+def convert_to_charts(list_of_values):
     time_vector = get_time_vector(list_of_values)
-    # legend = ['EMG', f'Patient {patient_name}']
     return list([time, value] for time, value in zip(time_vector, list_of_values))
-    # converted = [[time, value] for time, value in zip(time_vector, list_of_values)]
-    # converted.insert(0, legend)
-    # return converted
-    # return [converted.append([time, value]) for time, value in zip(time_vector, list_of_values)]
