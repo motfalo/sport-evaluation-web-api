@@ -17,3 +17,19 @@ def split_by_newline(value):
 @register.filter(name='convert_list_to_int')
 def convert_list_to_int(list_of_values):
     return [int(float(element)) for element in list_of_values]
+
+
+@register.filter(name='get_time_vector')
+def get_time_vector(list_of_values):
+    return list(range(len(list_of_values)))
+
+
+@register.filter(name='convert_to_charts')
+def convert_to_charts(list_of_values, patient_name):
+    time_vector = get_time_vector(list_of_values)
+    # legend = ['EMG', f'Patient {patient_name}']
+    return list([time, value] for time, value in zip(time_vector, list_of_values))
+    # converted = [[time, value] for time, value in zip(time_vector, list_of_values)]
+    # converted.insert(0, legend)
+    # return converted
+    # return [converted.append([time, value]) for time, value in zip(time_vector, list_of_values)]
