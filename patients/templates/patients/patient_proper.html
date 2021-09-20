@@ -12,7 +12,7 @@
             var data = new google.visualization.DataTable();
 
             data.addColumn('number', 'Time');
-            data.addColumn('number', 'Patient');
+            data.addColumn('number', '');
 
             data.addRows(
                 {{ signal_list }}
@@ -29,7 +29,7 @@
                     logScale: false
                 },
                 curveType: 'function',
-                legend: { position: 'bottom' }
+                legend: 'none'
              };
 
             var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -52,10 +52,9 @@
 {#            {% load filter_tags %}#}
 {#            {% with signal_list=object.proper_signal.read|split_by_newline|convert_list_to_int %}#}
 {##}
-{#                <li class="list-group-item"><strong>File:</strong> {{ signal_list }}</li>#}
-{#                <li class="list-group-item"><strong>Length:</strong> {{ signal_list|length }}</li>#}
-{##}
-{##}
+{#                <li class="list-group-item"><strong>Test: </strong> {{ signal_list }}</li>#}
+{#                <li class="list-group-item"><strong>Maximal value:</strong> {{ signal_list|get_max_value }}</li>#}
+{#                <li class="list-group-item"><strong>Minimal value:</strong> {{ signal_list|get_min_value }}</li>#}
 {#            {% endwith %}#}
             </ul>
         </div>
