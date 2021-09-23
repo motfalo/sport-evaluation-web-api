@@ -49,17 +49,14 @@
             <ul class="list-group">
               <li class="list-group-item"><strong>Name:</strong> {{ object.name }}</li>
               <li class="list-group-item"><strong>Description:</strong> {{ object.description }}</li>
-{#            {% load filter_tags %}#}
-{#            {% with signal_list=object.proper_signal.read|split_by_newline|convert_list_to_int %}#}
-{##}
-{#                <li class="list-group-item"><strong>Test: </strong> {{ signal_list }}</li>#}
-{#                <li class="list-group-item"><strong>Maximal value:</strong> {{ signal_list|get_max_value }}</li>#}
-{#                <li class="list-group-item"><strong>Minimal value:</strong> {{ signal_list|get_min_value }}</li>#}
-{#            {% endwith %}#}
             </ul>
         </div>
     <div id="curve_chart" style="width: 900px; height: 500px"></div>
-
     </div>
-
+    <div class="row top-buffer">
+        <div class="col-12">
+                <a href="{% url 'patient_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
+                <a href="{% url 'patient_view' patient.id %}"><button type="button" class="btn btn-secondary">Back</button></a>
+        </div>
+    </div>
 {% endblock %}
