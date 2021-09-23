@@ -6,7 +6,7 @@
         google.charts.setOnLoadCallback(drawChart);
 
         {% load filter_tags %}
-        {% with signal_list=object.proper_signal.read|split_by_newline|convert_list_to_int|convert_to_charts %}
+        {% with signal_list=object.hold_signal.read|split_by_newline|convert_list_to_int|convert_to_charts %}
 
         function drawChart() {
             var data = new google.visualization.DataTable();
@@ -19,7 +19,7 @@
             );
 
             var options = {
-                title: 'Proper muscle EMG signal',
+                title: 'Holding muscle EMG signal',
                 hAxis: {
                     title: 'Time',
                     logScale: false
@@ -41,7 +41,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="my-4">Proper muscles chart -
+    <h1 class="my-4">Holding muscle chart -
         <small>{{ object.name }}</small>
     </h1>
     <div class="row">
